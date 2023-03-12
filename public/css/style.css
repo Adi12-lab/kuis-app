@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.card-wrapper {
+  display: grid;
+  width: 600px;
+  height: 600px;
+  padding: 10px;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card.easy {
+  background-color: #9cf329;
+}
+.card.medium {
+  background-color: #f4c44b;
+}
+.card.hard {
+  background-color: #de3d38;
+}
+.card.cencored {
+  background-color: #7e7e7e;
+}
+
+.form-check-input {
+  margin: 3px;
+  width: 30px;
+  height: 30px;
+}
+.p-easy {
+  outline: #9cf329 solid 5px;
+  padding: 3px;
+}
+.p-medium {
+  outline: #f4c44b solid 5px;
+  padding: 3px;
+}
+.p-hard {
+  outline: #de3d38 solid 5px;
+  padding: 3px;
+}
+
+.timer {
+  font-size: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  width: max-content;
+}
+
+@media screen and (min-width : 576px) {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+  .timer {
+    font-size: 4rem;
+  }
+  .answer-option {
+    font-size: 1.8rem;
+  }
+}
