@@ -8,7 +8,7 @@
         @for($i = 0; $i < $quiz->count(); $i++)
         @if($quiz[$i]->status == 1)
         <button class="card approved cencored">
-          √
+          <img src="{{asset("/checklist.png")}}" width="80px">
         </button>
         @elseif($quiz[$i]->difficult ==  "easy")
         <button class="card easy cencored" data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="toQuestion({{$quiz[$i]->id_question}})">
@@ -44,11 +44,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p class="p-{{$dropdown_data["difficult"]}} mt-2">
+            <p class="question {{$dropdown_data["difficult"]}} mt-2">
               {{$dropdown_data["question"]}}
             </p>
 
-            <span class="my-4 d-block">Pilih jawaban yang tepat: </span>
+            <span class="my-4 d-block fs-3">Pilih jawaban yang tepat: </span>
             <div class="row d-flex g-2">
               @foreach($dropdown_data["answers"] as $answer)
               <input type="radio" class="btn-check" value="{{$answer["correct_answer"]}}" id="info-outlined-{{$answer["id_answer"]}}" wire:click="validating({{$answer["id_answer"]}})">

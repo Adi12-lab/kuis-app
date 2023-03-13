@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 use App\Models\Question;
 use App\Models\Answer;
 use Livewire\Component;
+use Illuminate\Support\Arr;
+ 
 use Alert;
 
 class AllQuiz extends Component
@@ -35,21 +37,25 @@ class AllQuiz extends Component
     }
     public function runTimer() {
       $this->dropdown_timer -= 1;
+      $message = ["Ngelamun ?", "Gak sadar seiring waktu kehilangan dia","Lah ngapain gak jawab ? wkwkkw"];
       if($this->dropdown_timer == 0) {
-      $this->emit("Alert", "error","Kehabisan Waktu", "Lah ngapain gak jawab ? wkwk");
+      $this->emit("Alert", "error","Kehabisan Waktu", Arr::random($message));
       }
     }
     public function validating(Answer $answer) {
     
       //Berhentikan timernya
       $this->dropdown_timer = null;
+      $messageSuccess = ["Ngueri","Hoki gak sih?"];
+      $messageFail = ["Awowok","Belajar lagi dek .."];
+
       if($answer->correct_answer == 1) {
         $question = Question::find($answer->id_question);
         $question->status = 1;
         $question->save();
-        $this->emit("Alert","success", "Berhasil", "Hoki gak sih?");
+        $this->emit("Alert","success", "Berhasil", Arr::random($messageSuccess));
       } else {
-        $this->emit("Alert", "error","Gagal", "Aowkaowk");
+        $this->emit("Alert", "error","Gagal", Arr::random($messageFail));
       }
     }
     public function render()

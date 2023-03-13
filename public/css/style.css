@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;500&display=swap');
+
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style: none;
+}
+h1 {
+  font-family: 'Lilita One', cursive;
 }
 .card-wrapper {
   display: grid;
@@ -19,6 +25,7 @@
   font-size: 50px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+
 .card.easy {
   background-color: #9cf329;
 }
@@ -31,25 +38,35 @@
 .card.cencored {
   background-color: #7e7e7e;
 }
+.card.approved {
+  background-color:antiquewhite;
+}
 
 .form-check-input {
   margin: 3px;
   width: 30px;
   height: 30px;
 }
-.p-easy {
+.question {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.question.easy {
   outline: #9cf329 solid 5px;
   padding: 3px;
 }
-.p-medium {
+.question.medium {
   outline: #f4c44b solid 5px;
   padding: 3px;
 }
-.p-hard {
+.question.hard {
   outline: #de3d38 solid 5px;
   padding: 3px;
 }
-
+.answer-option {
+  font-family: Poppins;
+  font-weight: 400;
+}
 .timer {
   font-size: 50px;
   padding: 10px;

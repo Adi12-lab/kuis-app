@@ -15,7 +15,9 @@
           @for($i = 0; $i < $questions->count(); $i++)
             <tr>
               <th scope="row">{{$i+1}}</th>
-              <td>{{$questions[$i]["question"]}}</td>
+              <td>
+                  {{str()->limit($questions[$i]["question"], 50)}}
+              </td>
               <td>
                 @if($questions[$i]["status"] == 1)
                    <a class="btn btn-primary" role="button" wire:click="activate({{$questions[$i]["id_question"]}})">Aktifkan</a>
